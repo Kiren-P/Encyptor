@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+    <title>Decryptor</title>
+{% endblock %}
+{% block content %}
+    <div class="main">
+        <form action="/debug" method="POST">
+            <fieldset>
+                <p>Enter encrypted text</p>
+                <input type="text" name="encrypted">
+            </fieldset>
+            <fieldset>
+                <p>Enter Key (Number)</p>
+                <input type="text" name="nkey" size="3">
+                <input type="submit">
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
