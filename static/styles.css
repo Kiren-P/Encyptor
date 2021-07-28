@@ -18,3 +18,10 @@
     padding: 3px;
     color: grey;
 }
+
+.title{
+    margin-top: 100px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}

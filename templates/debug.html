@@ -7,13 +7,15 @@
     <title>Result</title>
 </head>
 <body>
-    <h1>Your Result</h1>
-    <p>Save or remember this and your key to decrypt the text</p>
-    {%if string%}
-        <p>{{string}}</p>
-    {% endif %}
-    {%if encr%}
-        <p>{{encr}}</p>
-    {% endif %}
+    <div>
+        <h1>Your Result</h1>
+        <p>Save or remember this and your key to decrypt the text</p>
+        {%if string%}
+            <p>{{string}}</p>
+        {% endif %}
+        {%if encr%}
+            <p>{{encr}}</p>
+        {% endif %}
+    </div>
 </body>
 </html>

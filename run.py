@@ -1,10 +1,13 @@
+from warnings import resetwarnings
 from flask import Flask, render_template, url_for, request
 from tools import Tool
+import pyperclip
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = '866a09b30d75b28b28f7fcec2ea542ef'
 
 @app.route("/", methods=["GET", "POST"])
+@app.route("/encryptor", methods=["GET", "POST"])
 def encryptor():
     return render_template("encryptor.html")
 
@@ -18,15 +21,15 @@ def debug():
     to_decrypt = request.form.get("encrypted") #to decrypt
     if to_encrypt:
         key = int(request.form.get("key"))
-        result = Tool(to_encrypt, key)
-        return render_template("debug.html", string=result)
+        debug.result = Tool(to_encrypt, key)
+        return render_template("debug.html", string=debug.result)
     else:
         key = 0 - int(request.form.get("nkey"))
-        result = Tool(to_decrypt, key)
-        return render_template("debug.html", encr=result)
-        
-
+        debug.result = Tool(to_decrypt, key)
+        return render_template("debug.html", encr=debug.result)
 
 if __name__ == "__main__":
     app.run(debug=True)
 
+#use infinityfree to deploy
+#add some more css
