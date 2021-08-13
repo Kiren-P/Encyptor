@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "merriweather";
+    src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
 .main {
     position: fixed;
     top: 50%;
@@ -8,15 +15,15 @@
 .nav{
     margin: auto;
     width: 100%;
-    background-color: beige;
+    background-color: grey;
     padding: 10px;
     text-align: center;
 }
 
 .nav-item{
-    background-color: rgba(207, 207, 207, 0.26);
+
     padding: 3px;
-    color: grey;
+    color: black;
 }
 
 .title{
@@ -24,4 +31,13 @@
     position: fixed;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+.middle-text{
+    text-align: center;
+}
+
+* {
+    font-family: "merriweather";
+    font-weight: 100;
 }

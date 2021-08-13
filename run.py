@@ -15,18 +15,18 @@ def encryptor():
 def decryptor():
     return render_template("decryptor.html")
 
-@app.route("/debug", methods=["POST", "GET"])
-def debug():
+@app.route("/result", methods=["POST", "GET"])
+def result():
     to_encrypt = request.form.get("string") #to encrypt
     to_decrypt = request.form.get("encrypted") #to decrypt
     if to_encrypt:
         key = int(request.form.get("key"))
-        debug.result = Tool(to_encrypt, key)
-        return render_template("debug.html", string=debug.result)
+        result.result = Tool(to_encrypt, key)
+        return render_template("debug.html", string=result.result)
     else:
         key = 0 - int(request.form.get("nkey"))
-        debug.result = Tool(to_decrypt, key)
-        return render_template("debug.html", encr=debug.result)
+        result.result = Tool(to_decrypt, key)
+        return render_template("debug.html", encr=result.result)
 
 if __name__ == "__main__":
     app.run(debug=True)
